@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +27,8 @@ public class ChatController {
     }
 
     @PostMapping("/sendMessage")
-    public String sendMessage(@RequestParam String text) {
-        messages.add(new Message("Person", text));
+    public String sendMessage(@RequestParam String text, Principal principal) {
+        messages.add(new Message(principal.getName(), text));
         return "redirect:/";
     }
 }

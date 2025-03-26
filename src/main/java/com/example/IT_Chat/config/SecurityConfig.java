@@ -21,6 +21,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/h2-console/**").permitAll()  // Zugriff auf die H2-Konsole erlauben
+                        .requestMatchers("/").permitAll()
                         .anyRequest().authenticated()
                 )
                 .csrf(csrf -> csrf
