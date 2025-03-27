@@ -19,7 +19,8 @@
 
                 <div th:each="message : ${messages}">
                     <p><strong th:text="${message.user}"></strong>:
-                        <span th:text="${message.text}"></span></p>
+                        <span th:text="${message.text}"></span>
+                        <span th:time="${message.timestamp}"></span></p>
                 </div>
 
             </div>
@@ -37,6 +38,7 @@
         <div class="d-flex justify-content-between">
             <a href="#" class="btn btn-primary" th:href="@{/logout}">Logout</a>
             <a href="#" class="btn btn-primary" th:href="@{/register}">Registrieren</a>
+            <a href="#" class="btn btn-primary" th:href="@{/overview}">Benutzerübersicht</a>
         </div>
     </div>
 

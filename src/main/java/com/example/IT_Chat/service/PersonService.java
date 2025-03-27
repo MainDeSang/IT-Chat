@@ -15,15 +15,16 @@ public class PersonService {
     private final PersonRepository persoRepository;
 
     public void registerPerson(Person person) {
-        if(person.getName() == null || person.getName().isEmpty()) {
+        if (person.getName() == null || person.getName().isEmpty()) {
             throw new IllegalArgumentException("Name cannot be empty");
         }
-        if(person.getPassword() == null || person.getPassword().length() < 6) {
+        if (person.getPassword() == null || person.getPassword().length() < 6) {
             throw new IllegalArgumentException("Password cannot be empty and has to be at least 6 characters");
         }
-        if(person.getEmail() == null || person.getEmail().isBlank()) {
+        if (person.getEmail() == null || person.getEmail().isBlank()) {
             throw new IllegalArgumentException("Email cannot be empty");
         }
+
 
         persoRepository.save(person);
     }

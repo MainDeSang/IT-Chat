@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.security.Principal;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,14 +22,14 @@ public class ChatController {
     private final List<Message> messages = new ArrayList<>();
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, Principal principal) {
         model.addAttribute("messages", messages);
         return "index";
     }
 
     @PostMapping("/sendMessage")
-    public String sendMessage(@RequestParam String text, Principal principal) {
-        messages.add(new Message(principal.getName(), text));
+    public String sendMessage(@RequestParam String text, Principal principal, Timestamp timestamp) {
+        messages.add(new Message(text, principal, timestamp));
         return "redirect:/";
     }
 }

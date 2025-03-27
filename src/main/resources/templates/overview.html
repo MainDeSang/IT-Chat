@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
+<head>
+    <title>Hello Page</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Benutzer Übersicht</title>
+</head>
+<body>
+<h1>Benutzer Übersicht</h1>
+
+<form th:action="@{/overview/delete}" th:object="${persons}" method="post">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>Aktionen</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="person : ${persons}">
+            <td th:text="${person.name}">Name</td>
+            <td th:text="${person.email}">E-Mail</td>
+            <td>
+                <label>
+                    <button type="submit" class="btn btn-danger" th:value="${person.id}" name="id">Löschen</button>
+                </label>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="interface">
+        <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-primary" th:href="@{/logout}">Logout</a>
+            <a href="#" class="btn btn-primary" th:href="@{/register}">Zur Regestrierung</a>
+            <a href="#" class="btn btn-primary" th:href="@{/}">Chat</a>
+        </div>
+    </div>
+</body>
+</html>

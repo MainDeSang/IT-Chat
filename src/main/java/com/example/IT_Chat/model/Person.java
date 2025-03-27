@@ -3,6 +3,8 @@ package com.example.IT_Chat.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Timestamp;
+
 @Entity(name = "chat")
 @Builder
 @AllArgsConstructor
