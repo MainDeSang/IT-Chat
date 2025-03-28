@@ -1,6 +1,7 @@
 package com.example.IT_Chat.controller;
 
 import com.example.IT_Chat.model.Message;
+import com.example.IT_Chat.repository.PersonRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,14 +23,14 @@ public class ChatController {
     private final List<Message> messages = new ArrayList<>();
 
     @GetMapping("/")
-    public String index(Model model, Principal principal) {
+    public String index(Model model) {
         model.addAttribute("messages", messages);
         return "index";
     }
 
     @PostMapping("/sendMessage")
     public String sendMessage(@RequestParam String text, Principal principal, Timestamp timestamp) {
-        messages.add(new Message(text, principal, timestamp));
+        messages.add(new Message(text, principal, timestamp)); // TODO Timestamp doesn't work'
         return "redirect:/";
     }
 }

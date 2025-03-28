@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="content" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +21,7 @@
                 <div th:each="message : ${messages}">
                     <p><strong th:text="${message.user}"></strong>:
                         <span th:text="${message.text}"></span>
-                        <span th:time="${message.timestamp}"></span></p>
+                        <span th:time="${message.timestamp}"></span></p> <!-- wird nicht angezeigt!!! -->
                 </div>
 
             </div>

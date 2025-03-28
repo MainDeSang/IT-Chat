@@ -17,7 +17,7 @@ public class Person {
     private Long id;
 
     private String name;
-    private String password;
     @Column(nullable = false)
     private String email;
+    private String password;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="content" lang="en">
 <head>
     <title>Hello Page</title>
     <link rel="stylesheet"
@@ -20,7 +20,7 @@
     <button type="submit">Submit</button>
     <button type="reset">Reset</button>
 
-   <button type="submit" class="btn btn-primary"><a th:href="@{/overview}">Zur Benutzerübersicht</a></button>
+    <button type="submit" class="btn btn-primary"><a th:href="@{/overview}">Zur Benutzerübersicht</a></button>
     <button type="submit" class="btn btn-primary"><a th:href="@{/login}">Zum Login</a></button>
 
 </form>

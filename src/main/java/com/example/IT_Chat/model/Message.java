@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 public class Message {
     private String user;
     private String text;
-    private Timestamp timestamp;
+    private Timestamp timestamp; // timestamp wird momentan nicht in der Chat Message angezeigt.
 
     public Message(String text, Principal principal, Timestamp timestamp) {
         this.user = principal.getName();

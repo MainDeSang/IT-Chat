@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="content" xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
     <title>Hello Page</title>
     <link rel="stylesheet"
@@ -34,7 +34,7 @@
     <div class="interface">
         <div class="d-flex justify-content-between">
             <a href="#" class="btn btn-primary" th:href="@{/logout}">Logout</a>
-            <a href="#" class="btn btn-primary" th:href="@{/register}">Zur Regestrierung</a>
+            <a href="#" class="btn btn-primary" th:href="@{/register}">zur Regestrierung</a>
             <a href="#" class="btn btn-primary" th:href="@{/}">Chat</a>
         </div>
     </div>
